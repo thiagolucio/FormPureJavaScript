@@ -77,4 +77,11 @@ function mountTd(data, class) {
 
 function validationUser(user) {
     var errors[];
-}
+    if (user.name == '') errors.push('Nome não pode ser vazio');
+    if (!validationWeight(user.weight)) errors.push('Altura Inválida');
+    if (user.weight.length == 0) errors.push('Altura não pode ser vazio');
+    if (!validationHeight(user.height)) errors.push('Peso Inválido');
+    if (user.height.length == 0) errors.push('Peso não pode ser vazio');
+    if (user.fat.length == 0) errors.push('Gordura não pode ser vazia');
+    return errors;
+};
